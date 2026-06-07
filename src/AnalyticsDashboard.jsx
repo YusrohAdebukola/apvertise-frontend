@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Bar, Doughnut } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
+
 Chart.register(...registerables);
 
-const APIM_URL =  https://apvertise-apim.azure-api.net;
+const APIM_URL = 'https://apvertise-apim.azure-api.net/analytics';
 
 export default function AnalyticsDashboard() {
   const [stats, setStats] = useState(null);
@@ -37,11 +38,11 @@ export default function AnalyticsDashboard() {
   return (
     <div style={{padding: '2rem'}}>
       <h2>Campaign Analytics</h2>
-      <div style={{display:'flex', gap:'2rem'}}>
-        <div style={{flex:2}}>
+      <div style={{display: 'flex', gap: '2rem'}}>
+        <div style={{flex: 2}}>
           <Bar data={barData} />
         </div>
-        <div style={{flex:1}}>
+        <div style={{flex: 1}}>
           <Doughnut data={doughnutData} />
         </div>
       </div>
